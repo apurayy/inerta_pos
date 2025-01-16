@@ -1,0 +1,125 @@
+#menu_bar{
+    background-color: #3009de;
+}
+
+#menu_bar .logo{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#menu_bar ul li a{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+}
+#menu_bar ul li a:hover{
+    color: orange;
+}
+.login_btn{
+    background-color: orange;
+    margin-left: 10px;
+    padding: 5px 20px !important;
+    border-radius: 15px;
+    transition: all linear 0.4s;
+}
+.login_btn:hover{
+    color: orange !important;
+    background-color: #fff;
+}
+
+#hero{
+    background-color: #4f457f;
+    padding: 80px 0;
+}
+#hero .hero_left img{
+    width: 100%;
+}
+#hero .details h2{
+    color: #fff;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+}
+#hero .details p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+}
+.hero_btn{
+    padding: 20px 0;
+}
+.hero_btn a{
+    color: #fff;
+    border: 0;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all linear 0.4s;
+}
+.hero_btn a:hover{
+    color: orange;
+    background-color: #fff;
+}
+
+#footer{
+    background-color: #3009de;
+    padding: 40px 0;
+    color: #fff;
+}
+#footer p{
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+#footer ul li{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+}
+#footer_bottom{
+    background-color: #2e1997;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+#footer_bottom p{
+    font-size: 16px;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+
+
+#about{
+    padding: 60px 0;
+}
+#about p{
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+}
+#about .about_btn{
+    padding: 30px 0;
+}
+#about .about_btn a{
+    border: 0;
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17px;
+    transition: all linear 0.4s;
+}
+#about .about_btn a:hover{
+    color: orange;
+    background-color: #fff;
+    border: 1px solid orange;
+}
+#about img{
+    width: 100%;
+}
