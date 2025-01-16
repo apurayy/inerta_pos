@@ -11,14 +11,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    function DashboardPage(){
-        return Inertia::render('DashboardPage');
-    }
-
-
-
-
-    function Summery(Request $request){
+    function DashboardPage(Request $request){
         $user_id=$request->header('id');
         $product=Product::where('user_id',$user_id)->count();
         $category=Category::where('user_id',$user_id)->count();
@@ -28,7 +21,7 @@ class DashboardController extends Controller
         $vat=Invoice::where('user_id',$user_id)->sum('vat');
         $payable=Invoice::where('user_id',$user_id)->sum('payable');
 
-        return[
+        $data = [
             'product'=>$product,
             'category'=>$category,
             'customer'=>$customer,
@@ -38,5 +31,10 @@ class DashboardController extends Controller
             'payable'=>round($payable),
         ];
 
+        return Inertia::render('DashboardPage',[
+            'list'=>$data,
+        ]);
     }
+
+
 }

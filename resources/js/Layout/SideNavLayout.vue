@@ -63,7 +63,8 @@
                 <span class="side-bar-item-caption">Profile</span>
             </Link>
 
-            <Link href="/" class="side-bar-item">
+
+            <Link href="/logout" class="side-bar-item hr">
                 <span class="side-bar-item-icon">
                     <i class="fa-solid fa-right-from-bracket"></i>
                 </span>

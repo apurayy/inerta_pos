@@ -202,6 +202,10 @@ a:hover{
     color: #ffffff;
 }
 
+.hr{
+    border-top: 2px solid rgba(184, 183, 182, 0.576);
+}
+
 /* Responsive */
 
 @media (max-width: 339.98px) {

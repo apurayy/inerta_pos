@@ -5,29 +5,29 @@
                 <div class="card w-90 p-4">
                     <div class="card-body">
                         <h4 class="text-center text-primary">User Profile</h4>
-                        <form>
+                        <form @submit.prevent="submit">
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" v-model="form.name" class="form-control" id="name">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" v-model="form.email" class="form-control" id="email">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Mobile Number</label>
-                                <input type="number" class="form-control" id="mobile">
+                                <input type="text" v-model="form.mobile" class="form-control" id="mobile">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password">
+                                <input type="password" v-model="form.password" class="form-control" id="password">
                             </div>
 
 
-                            <Link href="" class="btn btn-primary w-100">Update</Link>
+                            <button type="submit" class="btn btn-primary w-100">Update</button>
                         </form>
                     </div>
                 </div>
@@ -37,7 +37,45 @@
 </template>
 
 <script setup>
-    import { Link } from '@inertiajs/vue3';
+    import { useForm, router } from '@inertiajs/vue3';
+    import { usePage } from '@inertiajs/vue3'
+
+    const props = defineProps({flash : Object})
+    const page = usePage()
+
+    const form = useForm({
+        name:page.props.list['name'],
+        email:page.props.list['email'],
+        mobile:page.props.list['mobile'],
+        password:page.props.list['password'],
+    })
+
+    function submit(){
+
+        if(form.name.length===0){
+            alert("Name Is Required")
+        }
+        else if(form.email.length===0){
+            alert("Email Is Required")
+        }
+        else if(form.mobile.length===0){
+            alert("Mobile Is Required")
+        }
+        else if(form.password.length===0){
+            alert("Password Is Required")
+        }
+        else{
+            form.post("/user-update", {
+                onSuccess:()=>{
+                    alert(page.props.flash.message)
+                }
+            })
+
+        }
+
+    }
+
+
 </script>
 
 <style scoped>
